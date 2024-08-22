@@ -1,0 +1,19 @@
+
+name: My Pipeline flow
+on:
+	push:
+	branches:
+		- main
+jobs:
+	build:
+	runs-on: ubuntu-latest
+	steps:
+		- name: Check out code
+		uses: actions/checkout@v2
+		# Add your workflow steps here
+		- name: Install dependencies
+			run: yarn install
+		- name: Run tests
+			run: yarn test
+		- name: Build project (replace with your build command)
+			run: yarn run build
